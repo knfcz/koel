@@ -41,7 +41,7 @@ class MediaCacheService
     private function query(): array
     {
         return [
-            'albums' => Album::orderBy('name')->get(),
+            'albums' => Album::orderBy('created_at', 'DESC')->get(),
             'artists' => Artist::orderBy('name')->get(),
             'songs' => Song::all(),
         ];
